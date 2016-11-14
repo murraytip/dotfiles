@@ -8,9 +8,6 @@ export LSCOLORS=gafahadxbxegedabagacad
 export HISTSIZE=10000000
 export HISTFILESIZE=10000000
 
-#to allow multiple searches on Homebrew package manager#
-export HOMEBREW_GITHUB_API_TOKEN=8b4704dfceb0ebc9d876e0c247be35b112ae3157
-
 #aliases#
 alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 alias vi="mvim -fv"
