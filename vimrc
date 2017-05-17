@@ -7,6 +7,7 @@ else
 	colorscheme desert
 endif
 
+set noswapfile	"this turns off the annoying swap files
 set hlsearch	"this turns on highlight in search
 filetype plugin indent on "this turns on smart coloring depending on language
 syntax on	"this turns on filetype recognition
