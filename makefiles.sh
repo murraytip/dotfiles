@@ -7,7 +7,7 @@
 
 dir=~/dotfiles	#dotfiles directory
 olddir=~/.dotfiles_old	#old dotfiles directory
-files="$(find . -depth 1 ! '(' -name 'LICENSE' -o -name '*.sh' -o -name '.git' ')'  -exec basename {} \;)"
+files="$(find . -mindepth 1 -maxdepth 1 ! '(' -name 'LICENSE' -o -name '*.sh' -o -name '.git' ')'  -exec basename {} \;)"
 
 ### create .dotfiles_old
 
