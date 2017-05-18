@@ -39,7 +39,12 @@ alias sdload="sudo kextload -b com.apple.iokit.IOUSBMassStorageClass"
 alias jauth="open ~/bin/jauth.jar"
 
 #editor#
-export VISUAL="/usr/local/bin/mvim -fv"
+if command_exists mvim ; then
+	export VISUAL="/usr/local/bin/mvim -fv"
+else
+	export VISUAL="/usr/bin/vim"
+fi
+
 export EDITOR="$VISUAL"
 
 #add JAVA_HOME variable#
