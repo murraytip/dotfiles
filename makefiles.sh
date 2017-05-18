@@ -7,7 +7,8 @@
 
 dir=~/dotfiles	#dotfiles directory
 olddir=~/.dotfiles_old	#old dotfiles directory
-files="$(find . -maxdepth 1 -type f  ! '(' -name 'LICENSE' -o -name '*.sh' ')'  -exec basename {} \;)"
+files="$(find . -maxdepth 1 ! '(' -name 'LICENSE' -o -name '*.sh' -o -name '.git' ')'  -exec basename {} \;)"
+
 ### create .dotfiles_old
 
 echo "Creating empty $olddir to backup any existing dotfiles in ~"
