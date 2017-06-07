@@ -1,4 +1,3 @@
-"MJT's vimrc, last updated on 
 "Sun 22 Nov 2015 19:57:49 EST
 
 if has ('gui_running')	"sets colorscheme to default in macvim, but desert in vim
@@ -19,4 +18,11 @@ set wrapmargin=0
 set ignorecase	"this sets case-insensitive search
 set smartcase	"if there is at least one capital letter, the search becomes case-sensitive again
 set ruler	"show the line and column number in the bottom right of the screen
+set tabstop=4	"tabs look like 4 spaces wide
+set shiftwidth=4	"indents correspond to a simple tab
+set smarttab	" makes tab key go to correct indent when coding
+
+"get rid of annoying q: screen
+map q:	:q<CR>	
+
 autocmd BufNewFile,BufFilePre,BufRead README.md,*.text,*.markdown set filetype=markdown "this sets proper Markdown highlighting for files with these extensions
