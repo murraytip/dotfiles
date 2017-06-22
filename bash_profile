@@ -19,29 +19,26 @@ command_exists () {
 if [[ "$platform" == 'macos' ]]; then
 	export CLICOLOR=1
 	export LSCOLORS=gafahadxbxegedabagacad
+elif [[ "$platform" == 'linux' ]]; then
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\]'
 fi
 
 ##increase history size, to search for previous commands##
 export HISTSIZE=10000000
 export HISTFILESIZE=10000000
 
-#aliases for macos#
+#aliases#
+alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 
-if [[ "$platform" == 'macos' ]]; then
-	alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
-
-	if command_exists mvim ; then 
-		alias vi="mvim -fv"
-		alias vim="mvim -fv"
-	fi
-
-	#alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-	alias sdunload="sudo kextunload -b com.apple.iokit.IOUSBMassStorageClass"
-	alias sdload="sudo kextload -b com.apple.iokit.IOUSBMassStorageClass"
-	alias jauth="open ~/bin/jauth.jar"
-	alias runlinux="vmrun -T fusion start "/Users/mjt/VMs/debvm.vmwarevm" nogui"
-	alias stoplinux="vmrun -T fusion stop "/Users/mjt/VMs/debvm.vmwarevm" nogui"
+if command_exists mvim ; then 
+	alias vi="mvim -fv"
+	alias vim="mvim -fv"
 fi
+
+#alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+alias sdunload="sudo kextunload -b com.apple.iokit.IOUSBMassStorageClass"
+alias sdload="sudo kextload -b com.apple.iokit.IOUSBMassStorageClass"
+alias jauth="open ~/bin/jauth.jar"
 
 #editor#
 if command_exists mvim ; then
