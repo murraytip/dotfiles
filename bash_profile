@@ -25,18 +25,23 @@ fi
 export HISTSIZE=10000000
 export HISTFILESIZE=10000000
 
-#aliases#
-alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
+#aliases for macos#
 
-if command_exists mvim ; then 
-	alias vi="mvim -fv"
-	alias vim="mvim -fv"
+if [[ "$platform" == 'macos' ]]; then
+	alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
+
+	if command_exists mvim ; then 
+		alias vi="mvim -fv"
+		alias vim="mvim -fv"
+	fi
+
+	#alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+	alias sdunload="sudo kextunload -b com.apple.iokit.IOUSBMassStorageClass"
+	alias sdload="sudo kextload -b com.apple.iokit.IOUSBMassStorageClass"
+	alias jauth="open ~/bin/jauth.jar"
+	alias runlinux="vmrun -T fusion start "/Users/mjt/VMs/debvm.vmwarevm" nogui"
+	alias stoplinux="vmrun -T fusion stop "/Users/mjt/VMs/debvm.vmwarevm" nogui"
 fi
-
-#alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-alias sdunload="sudo kextunload -b com.apple.iokit.IOUSBMassStorageClass"
-alias sdload="sudo kextload -b com.apple.iokit.IOUSBMassStorageClass"
-alias jauth="open ~/bin/jauth.jar"
 
 #editor#
 if command_exists mvim ; then
