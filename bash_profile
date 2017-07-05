@@ -23,6 +23,9 @@ elif [[ "$platform" == 'linux' ]]; then
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\]'
 fi
 
+##stop prompt length becoming huge by limiting it to 3 directories (only in Bash 4+)##
+export PROMPT_DIRTRIM=3
+
 ##increase history size, to search for previous commands##
 export HISTSIZE=10000000
 export HISTFILESIZE=10000000
@@ -54,3 +57,4 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Hom
 
 #add ~/bin to $PATH#
 export PATH=$PATH:$HOME/bin
+
