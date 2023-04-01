@@ -48,6 +48,11 @@ if [[ "$platform" == 'macos' ]]; then
 	export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
 fi
 
+# Linux aliases
+if [[ "$platform" == 'linux' ]]; then
+	alias ls="ls --color=auto"
+fi
+
 #editor#
 if command_exists mvim ; then
 	export VISUAL="/usr/local/bin/mvim -fv"

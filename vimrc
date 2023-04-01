@@ -23,6 +23,6 @@ set shiftwidth=4	"indents correspond to a simple tab
 set smarttab	" makes tab key go to correct indent when coding
 
 "get rid of annoying q: screen
-map q:	:q<CR>	
+"map q:	:q<CR>	
 
 autocmd BufNewFile,BufFilePre,BufRead README.md,*.text,*.markdown set filetype=markdown "this sets proper Markdown highlighting for files with these extensions
